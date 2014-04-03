@@ -1,0 +1,15 @@
+.media-container {
+  
+  .carousel-inner {
+    max-width: 408px;
+    max-height: 273px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: image-url('bg_grunge.png');
+    padding: 4px;
+  }
+  
+  .video-player {
+    width: 100%;
+  }
+}

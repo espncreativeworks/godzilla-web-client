@@ -1,0 +1,47 @@
+.form .form-group {
+  margin-bottom: 0px;
+  font-size: 11px;
+}
+
+.form .form-controls-container .btn {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+[type="checkbox"] {
+  margin-top: 2px;
+  opacity:0;
+}
+
+[type="checkbox"] + span.checkbox-label:before {
+  content: "";
+  //display: block;
+  float: left;
+  width: 13px;
+  height: 13px;
+  margin: 2px 0 0 -20px;
+  padding: 0;
+  border: 2px solid $godzilla-light-brown;
+  cursor: pointer;
+}
+
+[type="checkbox"]:checked + span.checkbox-label:before {
+  content: "✓";
+  //display: block;
+  float: left;
+  width: 13px;
+  height: 13px;
+  margin: 2px 0 0 -20px;
+  padding: 0;
+  border: 2px solid $godzilla-light-brown;
+  font-size: 13px;  
+  line-height: 9px;
+  text-indent: -2px;
+  //cursor: pointer;
+  
+  @media (min-width: $screen-md-min){
+    text-indent: 0;
+  }
+}

@@ -1,0 +1,32 @@
+// Project specific
+$font-family-open-sans: "open-sans";
+$font-family-godzilla: "Godzilla";
+$godzilla-gold: #c18040;
+$godzilla-dark-gold: #c0843f;
+$godzilla-brown: #572207;
+$godzilla-light-brown: #8a5029;
+
+// Bootstrap Overrides
+$body-bg: #000;
+$text-color: #fff;
+$link-color: $godzilla-gold;
+$link-hover-color: $godzilla-brown;
+$font-family-sans-serif: $font-family-open-sans, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$image-path: '../images/';
+$icon-font-path: '../fonts/';
+
+$navbar-default-color:             $godzilla-gold;
+$navbar-default-bg:                mix($godzilla-brown, #000, 25%);
+//$navbar-default-border:            darken($navbar-default-bg, 6.5%) !default;
+
+// Navbar links
+$navbar-default-link-color:                $link-color;
+$navbar-default-link-hover-color:          $link-hover-color;
+//$navbar-default-link-hover-bg:             transparent !default;
+$navbar-default-link-active-color:         $godzilla-light-brown ;
+$navbar-default-link-active-bg:            darken($navbar-default-bg, 6.5%);
+
+// Navbar toggle
+$navbar-default-toggle-hover-bg:           $godzilla-gold;
+$navbar-default-toggle-icon-bar-bg:        $godzilla-brown;
+$navbar-default-toggle-border-color:       $godzilla-gold;

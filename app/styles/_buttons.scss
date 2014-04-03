@@ -1,0 +1,29 @@
+.btn-godzilla {
+  padding-left: 48px;
+  padding-right: 48px;
+  line-height: 43px;
+  margin-top: 44px;
+  margin-bottom: 44px;
+  background-color: transparent;
+  background-image: image-url('bg_btn_default.png');
+  background-position: 0 0;
+  background-repeat: repeat;
+  border-width: 0;
+  border-radius: 0;
+  border-color: transparent;
+  color: #fff;
+  font-family: $font-family-sans-serif;
+  font-weight: bold;
+  font-size: 21px;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  
+  &:hover {
+    background-color: transparent;
+  }
+  
+  &:active {
+    background-image: image-url('bg_btn_default.png');
+  }
+}

@@ -1,0 +1,70 @@
+body {
+  background-image: image-url('bg_godzilla.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: -300px 0px;
+  
+  @media (min-width: $screen-sm-min){
+    min-height: 919px;
+    padding-top: 40px;
+    background-size: none;
+    background-position: center;
+  }
+}
+
+body.rules,
+body.prizing {
+  background-image: none;
+  background-color: #000;
+}
+
+.content-container a:not(.btn), 
+.legal-container a:not(.btn) {
+  text-decoration: none;
+  
+  &:hover {
+    color: $link-color;
+    text-decoration: underline;
+  }
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.divider {
+  height: 1px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: none;
+  background-color: none;
+  background-image: image-url('bg_grunge.png');
+  background-repeat: repeat;
+  background-position: 0 0;
+
+  &.gradient {
+    background-image: image-url('bg_rule_fade.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  
+  &.narrow {
+    &.both {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    &.top {
+      margin-top: 10px;
+    } 
+    &.bottom {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.no-purchase {
+  text-transform: uppercase;
+}

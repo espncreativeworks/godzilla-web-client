@@ -1,0 +1,102 @@
+$sprite-file-name: 'godzilla_sprite.png';
+$sprite-offset-x: 11px;
+$sprite-offset-y: 10px;
+
+$espn-icon-width: 83px;
+$espn-icon-height: 21px;
+$espn-icon-x: (13px + $sprite-offset-x) * -1;
+$espn-icon-y: (11px + $sprite-offset-y) * -1;
+$espn-icon-hover-x: (13px + $sprite-offset-x) * -1;
+$espn-icon-hover-y: (43px + $sprite-offset-y) * -1;
+
+$facebook-icon-width: 21px;
+$facebook-icon-height: 21px;
+$facebook-icon-x: (11px + $sprite-offset-x) * -1;
+$facebook-icon-y: (75px + $sprite-offset-y) * -1;
+$facebook-icon-hover-x: (11px + $sprite-offset-x) * -1;
+$facebook-icon-hover-y: (107px + $sprite-offset-y) * -1;
+
+$twitter-icon-width: 21px;
+$twitter-icon-height: 21px;
+$twitter-icon-x: (43px + $sprite-offset-x) * -1;
+$twitter-icon-y: (75px + $sprite-offset-y) * -1;
+$twitter-icon-hover-x: (43px + $sprite-offset-x) * -1;
+$twitter-icon-hover-y: (107px + $sprite-offset-y) * -1;
+
+.branding-container {
+  padding-top: 42px;
+  padding-bottom: 84px;
+}
+
+.logo-container {
+  display: block;
+  width: 100%;
+  height: auto;
+  
+  .logo {
+    display: block;
+    margin: 0 auto;
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  &.hawaiian-air .logo {
+    width: 126px;
+    height: 101px;
+    background-image: image-url('logo_hawaiian_air.png'); 
+    margin-top: 39px;
+    margin-bottom: 39px;
+  }
+  
+  &.godzilla-movie .logo {
+    width: 158px;
+    height: 179px;
+    background-image: image-url('logo_godzilla_movie.png'); 
+  }
+    
+}
+
+.icon-container {
+  display: block;
+  
+  .icon {
+    display: inline-block;
+    background-image: image-url($sprite-file-name);
+    background-repeat: no-repeat;
+  }
+  
+  .icon.espn {
+    width: $espn-icon-width;
+    height: $espn-icon-height;
+    background-position: $espn-icon-x $espn-icon-y;
+    
+    &:hover {
+      background-position: $espn-icon-hover-x $espn-icon-hover-y;
+    }
+  }
+  
+  .icon.facebook {
+    width: $facebook-icon-width;
+    height: $facebook-icon-height;
+    background-position: $facebook-icon-x $facebook-icon-y;
+    
+    &:hover {
+      background-position: $facebook-icon-hover-x $facebook-icon-hover-y;
+    }
+  }
+  
+  .icon.twitter {
+    width: $twitter-icon-width;
+    height: $twitter-icon-height;
+    background-position: $twitter-icon-x $twitter-icon-y;
+    
+    &:hover {
+      background-position: $twitter-icon-hover-x $twitter-icon-hover-y;
+    }
+  }
+}
+
+.navbar-header .icon-container {
+  padding: 14.5px 0 14.5px 15px;
+}
