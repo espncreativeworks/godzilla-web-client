@@ -1,7 +1,7 @@
 require.config({
   paths: {
     jquery: '../bower_components/jquery/jquery',
-    bootstrap: '../bower_components/bootstrap-sass-official/vendor/assets/javascripts/twbs',
+    bootstrap: 'twbs',
     fastclick: 'fastclick',
     resizer: 'resizer'
   },
