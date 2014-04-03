@@ -2,12 +2,24 @@ $sprite-file-name: 'godzilla_sprite.png';
 $sprite-offset-x: 11px;
 $sprite-offset-y: 10px;
 
+$hawaiian-air-filename: 'logo_hawaiian_air.png';
+$hawaiian-air-filename-retina: 'logo_hawaiian_air@2x.png';
+$hawaiian-air-width: 126px;
+$hawaiian-air-height: 101px;
+
+$godzilla-movie-filename: 'logo_godzilla_movie.png';
+$godzilla-movie-filename-retina: 'logo_godzilla_movie@2x.png';
+$godzilla-movie-width: 158px;
+$godzilla-movie-height: 179px;
+
 $espn-icon-width: 83px;
 $espn-icon-height: 21px;
 $espn-icon-x: (13px + $sprite-offset-x) * -1;
 $espn-icon-y: (11px + $sprite-offset-y) * -1;
 $espn-icon-hover-x: (13px + $sprite-offset-x) * -1;
 $espn-icon-hover-y: (43px + $sprite-offset-y) * -1;
+$espn-icon-filename-retina: 'logo_espn@2x.png';
+$espn-icon-hover-filename-retina: 'logo_espn_hover@2x.png'; 
 
 $facebook-icon-width: 21px;
 $facebook-icon-height: 21px;
@@ -15,6 +27,8 @@ $facebook-icon-x: (11px + $sprite-offset-x) * -1;
 $facebook-icon-y: (75px + $sprite-offset-y) * -1;
 $facebook-icon-hover-x: (11px + $sprite-offset-x) * -1;
 $facebook-icon-hover-y: (107px + $sprite-offset-y) * -1;
+$facebook-icon-filename-retina: 'icon_facebook@2x.png';
+$facebook-icon-hover-filename-retina: 'icon_facebook_hover@2x.png';
 
 $twitter-icon-width: 21px;
 $twitter-icon-height: 21px;
@@ -22,6 +36,8 @@ $twitter-icon-x: (43px + $sprite-offset-x) * -1;
 $twitter-icon-y: (75px + $sprite-offset-y) * -1;
 $twitter-icon-hover-x: (43px + $sprite-offset-x) * -1;
 $twitter-icon-hover-y: (107px + $sprite-offset-y) * -1;
+$twitter-icon-filename-retina: 'icon_twitter@2x.png';
+$twitter-icon-hover-filename-retina: 'icon_twitter_hover@2x.png';
 
 .branding-container {
   padding-top: 42px;
@@ -42,17 +58,17 @@ $twitter-icon-hover-y: (107px + $sprite-offset-y) * -1;
   }
   
   &.hawaiian-air .logo {
-    width: 126px;
-    height: 101px;
-    background-image: image-url('logo_hawaiian_air.png'); 
+    width: $hawaiian-air-width;
+    height: $hawaiian-air-height;
+    background-image: image-url($hawaiian-air-filename); 
     margin-top: 39px;
     margin-bottom: 39px;
   }
   
   &.godzilla-movie .logo {
-    width: 158px;
-    height: 179px;
-    background-image: image-url('logo_godzilla_movie.png'); 
+    width: $godzilla-movie-width;
+    height: $godzilla-movie-height;
+    background-image: image-url($godzilla-movie-filename); 
   }
     
 }
@@ -95,6 +111,59 @@ $twitter-icon-hover-y: (107px + $sprite-offset-y) * -1;
       background-position: $twitter-icon-hover-x $twitter-icon-hover-y;
     }
   }
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) {
+  
+  .logo-container {
+    &.hawaiian-air .logo {
+      background-image: image-url($hawaiian-air-filename-retina);
+      background-size: $hawaiian-air-width $hawaiian-air-height; 
+    }
+    
+    &.godzilla-movie .logo {
+      background-image: image-url($godzilla-movie-filename-retina);
+      background-size: $godzilla-movie-width $godzilla-movie-height; 
+    }
+  }
+  
+  .icon-container {
+    
+    .icon {
+      background-image: none;
+    }
+    
+    .icon.espn, 
+    .icon.facebook, 
+    .icon.twitter {
+      background-position: 0 0;
+      &:hover { background-position: 0 0; }
+    }
+    
+    .icon.espn {
+      background-image: image-url($espn-icon-filename-retina);
+      background-size: $espn-icon-width $espn-icon-height;
+      &:hover { background-image: image-url($espn-icon-hover-filename-retina); }
+    }
+    
+    .icon.facebook {
+      background-image: image-url($facebook-icon-filename-retina);
+      background-size: $facebook-icon-width $facebook-icon-height;
+      &:hover { background-image: image-url($facebook-icon-hover-filename-retina); }
+    }
+    
+    .icon.twitter {
+      background-image: image-url($twitter-icon-filename-retina);
+      background-size: $twitter-icon-width $twitter-icon-height;
+      &:hover { background-image: image-url($twitter-icon-hover-filename-retina); }
+    } 
+  } 
 }
 
 .navbar-header .icon-container {
