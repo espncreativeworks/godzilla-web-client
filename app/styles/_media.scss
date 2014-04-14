@@ -1,39 +1,36 @@
 .media-container {
   
-  .carousel-inner {
-    max-width: 256px;
-    max-height: 144px;
+  $video-max-width-default: 256px;
+  $video-max-height-default: 144px;
+  $video-max-width-sm: 408px;
+  $video-max-height-sm: 273px;
+  $video-padding: 4px;
+  
+  .video-player-container {
+    max-width: $video-max-width-default;
+    max-height: $video-max-height-default;
     margin-left: auto;
     margin-right: auto;
     background-image: image-url('bg_grunge.png');
     padding: 4px;
-    
-    @media (min-width: $screen-sm-min){
-      max-width: 408px;
-      max-height: 273px;
-    }
   }
   
   .video-player {
     width: 100%;
+    max-width: $video-max-width-default - ($video-padding * 2);
+    max-height: $video-max-height-default - ($video-padding * 2);
   }
   
-  .carousel-control {
-    background-image: none;
-    background-repeat: no-repeat;
-  }
-  
-  .carousel-control .glyphicon {
-    margin-left: 0;
+  @media (min-width: $screen-sm-min){
     
-    &.glyphicon-chevron-left { 
-      left: 0; 
-      right: auto; 
+    .video-player-container {
+      max-width: $video-max-height-sm;
+      max-height: $video-max-height-sm;
     }
-  
-    &.glyphicon-chevron-right { 
-      right: 0; 
-      left: auto; 
+    
+    .video-player {
+      max-width: $video-max-width-sm - ($video-padding * 2);
+      max-height: $video-max-height-sm - ($video-padding * 2);
     }
   }
   

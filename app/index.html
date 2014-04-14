@@ -62,45 +62,13 @@
         </div>
         <div class="row messaging-container">
           <div class="col-xs-12 text-center">
-            <a href="confirm.html" class="btn btn-default btn-godzilla" title="Start Here">Start Here</a>
+            <a href="javascript:void(0);" class="btn btn-default btn-godzilla" title="Start Here" data-control-action="start">Start Here</a>
           </div>
         </div>
         <div class="row media-container">
-          <div id="video-carousel" class="carousel slide" data-ride="carousel">
-
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner">
-              <div class="item active">
-                <video class="video-player" title="Theatrical Trailer" controls>
-                  <source src="http://a.espncdn.com/contests/videos/fpo/lorem-vidsum.mp4" type="video/mp4"></source>
-                  <source src="http://a.espncdn.com/contests/videos/fpo/lorem-vidsum.webm" type="video/webm"></source>
-                </video>
-                <div class="carousel-caption">Theatrical Trailer 1</div>
-              </div>
-              <div class="item">
-                <video class="video-player" title="Theatrical Trailer" controls>
-                  <source src="http://a.espncdn.com/contests/videos/fpo/lorem-vidsum.mp4" type="video/mp4"></source>
-                  <source src="http://a.espncdn.com/contests/videos/fpo/lorem-vidsum.webm" type="video/webm"></source>
-                </video>
-                <div class="carousel-caption">Theatrical Trailer 2</div>
-              </div>
-              <div class="item">
-                <video class="video-player" title="Theatrical Trailer" controls>
-                  <source src="http://a.espncdn.com/contests/videos/fpo/lorem-vidsum.mp4" type="video/mp4"></source>
-                  <source src="http://a.espncdn.com/contests/videos/fpo/lorem-vidsum.webm" type="video/webm"></source>
-                </video>
-                <div class="carousel-caption">Theatrical Trailer 3</div>
-              </div>
-            </div>
-
-            <!-- Controls -->
-            <a class="left carousel-control" href="#video-carousel" data-slide="prev">
-              <span class="glyphicon glyphicon-chevron-left"></span>
-            </a>
-            <a class="right carousel-control" href="#video-carousel" data-slide="next">
-              <span class="glyphicon glyphicon-chevron-right"></span>
-            </a>
-  
+          <!-- Wrapper for YouTube player -->
+          <div class="video-player-container">
+            <iframe class="video-player" src="//www.youtube.com/embed/videoseries?list=PLmZ0W344sKj2ORVhwMXTCpydbwWZkt68j&modestbranding=1&rel=0&showinfo=0&autohide=1" frameborder="0" allowfullscreen></iframe>
           </div>
         </div>
         <div class="row branding-container">
@@ -186,6 +154,10 @@
       </div>
     </div>
   </footer>
+  
+  <div id="modals" style="display:none;">
+    <a class="cbOverlay text-hide" data-affiliatename="espn_contests" data-language="en" data-regformid="espn_contests" tref="/members/v3_1/login" href="javascript:void(0);" data-control-action="login">Sign In</a>
+  </div>
   
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
   <script>
