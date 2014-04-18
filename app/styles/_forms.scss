@@ -45,3 +45,11 @@
     text-indent: 0;
   }
 }
+
+.form-group.has-error {
+  border: 2px solid $state-danger-text;
+}
+
+.has-error .optin-label {
+  color: white;
+}

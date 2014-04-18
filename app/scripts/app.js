@@ -23,23 +23,23 @@ define(['require', 'fastclick', 'jquery', 'resizer', 'facebook'], function(requi
   social.fb.callback = function _fb_callback(response){
     if (response && response.post_id){
       // track post
-      console.log(response);
+      //console.log(response);
     } else {
       // track abandoned post
-      console.warn('abandoned post');
+      //console.warn('abandoned post');
     }
   };
   
   locals.activateNav = function _activateNav(){
     var $ = jQuery, pageUrl = window.location.href, $linkGroups;
     $linkGroups = [
-      $('#promo-nav-head ul.nav > li > a').not('[href*="javascript:"]'), 
+      $('#promo-nav-head ul.nav > li > a').not('[href*="javascript:"]'),
       $('.footer .nav-links > li > a').not('[href*="javascript:"]')
     ];
-    $.each($linkGroups, function(i, $linkGroup){
-      $.each($linkGroup, function(k, $link){
+    $.each($linkGroups, function(){
+      $.each(this, function(){
         var $this = $(this);
-        console.log(this.href + ' === ' + pageUrl );
+        //console.log(this.href + ' === ' + pageUrl );
         if (this.href === pageUrl){
           $this.parent().siblings().removeClass('active');
           $this.parent().addClass('active');
@@ -53,8 +53,7 @@ define(['require', 'fastclick', 'jquery', 'resizer', 'facebook'], function(requi
     jQuery(document).ready(function($){
       
       FastClick.attach(document.body);
-      locals.activateNav(); 
-      $('#video-carousel').carousel();
+      locals.activateNav();
       
       $('.social').on('click', '.facebook', function(e){
         e.preventDefault();
@@ -72,13 +71,23 @@ define(['require', 'fastclick', 'jquery', 'resizer', 'facebook'], function(requi
         return false;
       });
       
-      $('#confirm-form').on('submit', function (e){
-        var $this = $(this), 
-          $target = $(e.target), 
-          $acceptance = $this.find('input[type="checkbox"].optin');
+      $('#confirm-form').on('submit', function (){
+        var $this = $(this),
+          $formGroup = $this.find('.form-group.optin'),
+          $acceptance = $formGroup.find('input[type="checkbox"].optin');
         
-        if (!$acceptance.is(':checked')){
+        if ($acceptance.length && !$acceptance.is(':checked')){
+          $formGroup.addClass('has-feedback has-error');
           return false;
+        }
+      });
+      
+      $('#confirm-form').on('change', 'input[type="checkbox"].optin', function(){
+        var $this = $(this),
+          $formGroup = $('#confirm-form .form-group.optin');
+        
+        if ($formGroup.hasClass('has-feedback') && $this.is(':checked')){
+          $formGroup.removeClass('has-error has-feedback');
         }
       });
       
@@ -87,7 +96,7 @@ define(['require', 'fastclick', 'jquery', 'resizer', 'facebook'], function(requi
         Resizer.resize();
       });
       
-      console.log('Running app.js');
+      //console.log('Running app.js');
       
     });
     

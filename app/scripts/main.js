@@ -8,6 +8,9 @@ require.config({
     facebook: '//connect.facebook.net/en_US/all'
   },
   shim: {
+    jquery: {
+      exports: 'jquery'
+    },
     plugins: {
       deps: ['jquery'],
       exports: 'jquery'
@@ -28,6 +31,6 @@ require.config({
 require(['app', 'jquery', 'plugins', 'bootstrap'], function(app, $) {
   'use strict';
   // use app here
-  console.log('Running jQuery %s', $().jquery);
+  //console.log('Running jQuery %s', $().jquery);
   app.init();
 });
